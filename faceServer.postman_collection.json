@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "d572d99e-10e3-4839-9636-ed9b14136fb9",
+		"name": "faceServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET-IMAGES",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://backend.thomas-talk.me/api/v1/find-all-info/thomas_facedb/Fa_Users",
+					"protocol": "https",
+					"host": [
+						"backend",
+						"thomas-talk",
+						"me"
+					],
+					"path": [
+						"api",
+						"v1",
+						"find-all-info",
+						"thomas_facedb",
+						"Fa_Users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NEW-IMAGE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/optiplex 7050/Desktop/salvador/FaceDetectionVideo/images/joey.jpg"
+						},
+						{
+							"key": "password",
+							"value": "1234567",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/file",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"file"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-IMAGE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/imagen/17",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"imagen",
+						"17"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE-IMAGE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/delete/16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"delete",
+						"16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PASS-LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"password\" : \"123456\"\r\n\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/17",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"17"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NEW-REGISTER",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-keys-to-add-id",
+						"value": "[\":NameCampoId\"]",
+						"type": "text"
+					},
+					{
+						"key": "x-keys-of-arrays",
+						"value": "[]",
+						"type": "text"
+					},
+					{
+						"key": "x-relations",
+						"value": "false",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \":IdFace\": \"\",\r\n    \"Name\": \"Albert\",\r\n    \"Apellido\": \"Guillermo\",\r\n    \"cedula\": \"27564839\",\r\n    \"TypeUser\": \"Empleado\",\r\n    \"createdAt\": \"\",\r\n    \"updatedAt\": \"\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://backend.thomas-talk.me/api/v1/create-info/thomas_facedb/Fa_Users",
+					"protocol": "https",
+					"host": [
+						"backend",
+						"thomas-talk",
+						"me"
+					],
+					"path": [
+						"api",
+						"v1",
+						"create-info",
+						"thomas_facedb",
+						"Fa_Users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

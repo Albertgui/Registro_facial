@@ -1,0 +1,53 @@
+<main>
+
+<h1>Registrar rostro</h1>
+
+<form  id="formulario" (ngSubmit)="onSubmit()">
+
+    <div >
+        <label  for="img" class="form-label m-3">Imagen: </label>
+        <input class="form-control form-control-lg" id="formFileLg" type="file" id="img" name="img" accept="image/*" ngModel (change)="selectImage($event)">
+        <button>Capturar</button>
+        <img class="imgUpload mx-4 mt-3" [src]="imgURL" width="100px" >
+    </div>
+
+    <div class="input-group input-group-lg">
+        <label for="nombre" class="input-group-text" id="inputGroup-sizing-lg">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" [(ngModel)]="rostro.nombre" required autocomplete="off">
+    </div>
+
+    <div class="input-group input-group-lg">
+        <label for="apellido" class="input-group-text" id="inputGroup-sizing-lg">Apellido:</label>
+        <input type="text" class="form-control" id="apellido" name="apellido" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" [(ngModel)]="rostro.apellido" required autocomplete="off">
+    </div>
+
+    <div class="input-group input-group-lg">
+        <label for="cedula" class="input-group-text" id="inputGroup-sizing-lg">Cedula:</label>
+        <input type="text" class="form-control" id="cedula" name="cedula" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" [(ngModel)]="rostro.cedula" required autocomplete="off">
+    </div>
+
+    <div class="input-group input-group-lg">
+        <select name="tipo" id="tipo" [(ngModel)]="rostro.tipo" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option selected>Seleccione el tipo de registro</option>
+            <option value="Empleado">Empleado</option>
+            <option value="Cliente">Cliente</option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <input type="submit" value="Registrar" [disabled]="btnActive">
+    </div>
+
+</form>
+
+<button (click)="getData()" type="button" class="btn btn-secondary mt-3 mx-2">Obtener Datos</button>
+
+<button (click)="mostrarImg()" type="button" class="btn btn-secondary mt-3 mx-2">Obtener Imagenes</button>
+
+<button (click)="editData()" type="button" class="btn btn-primary mt-3 mx-2">Editar registro</button>
+
+
+<div class="images-list" #imagesList></div>
+
+
+</main>
